@@ -1,4 +1,4 @@
-// Danh sách 12 phần thưởng
+// Danh sách 12 phần thưởng (Tất cả đã được thay bằng Mạnh Tân)
 const gifts = [
     { name: "Mạnh Tân", image: "manh-tan.png" },
     { name: "Mạnh Tân", image: "manh-tan.png" },
@@ -17,7 +17,7 @@ const gifts = [
 // Danh sách 12 màu nền gradient tương ứng trong CSS
 const colors = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'c12'];
 
-// Xáo trộn ngẫu nhiên danh sách quà (thuật toán Fisher-Yates thu gọn)
+// Xáo trộn ngẫu nhiên danh sách quà (vẫn giữ logic xáo trộn gốc)
 gifts.sort(() => Math.random() - 0.5);
 
 const container = document.getElementById('boxContainer');
@@ -54,15 +54,15 @@ for (let i = 0; i < 12; i++) {
         this.classList.remove('unopened');
         this.classList.add('opened');
 
-        // 3. Hiển thị phần thưởng
+        // 3. Hiển thị phần thưởng (Đã thêm class="gift-img" vào thẻ img)
         const gift = gifts[i];
-        this.querySelector('.box-icon').innerText = gift.icon;
+        this.querySelector('.box-icon').innerHTML = `<img src="${gift.image}" alt="${gift.name}" class="gift-img">`;
         
         const nameEl = this.querySelector('.box-name');
         nameEl.innerText = gift.name;
         nameEl.style.display = 'block'; // Hiện tên quà lên
         
-        this.querySelector('.box-status').innerText = 'Chưa tày lắm!';
+        this.querySelector('.box-status').innerText = 'Chưa tày rồi!';
 
         // 4. Cập nhật thanh tiến trình
         openedCount++;
