@@ -1,0 +1,41 @@
+/* Thiết lập chung */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Màu nền xám nhạt */
+    color: #333;
+}
+
+/* Phần đầu trang (Header) */
+header {
+    background: #24292e; /* Màu đen đặc trưng của GitHub */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Nội dung chính */
+.content {
+    max-width: 800px;
+    margin: 20px auto; /* Căn giữa trang */
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Phần chân trang (Footer) */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Làm đẹp tiêu đề */
+h2 {
+    border-bottom: 2px solid #24292e;
+    padding-bottom: 5px;
+}
