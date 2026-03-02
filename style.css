@@ -9,34 +9,22 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
-header {
-    padding: 60px 20px 40px;
-}
+/* Header & Thanh tiến trình */
+header { padding: 40px 20px 30px; }
+h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
+header p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px; }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    margin-bottom: 30px;
-}
-
-/* Thanh tiến trình */
 .progress-container {
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 8px 25px;
+    padding: 10px 25px;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
-/* Lưới các hộp quà */
+/* Lưới 12 hộp quà (4 cột, 3 hàng) */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -46,7 +34,7 @@ header p {
     padding: 0 20px 60px;
 }
 
-/* Styling chung cho các hộp */
+/* Định dạng cơ bản cho mỗi hộp */
 .box {
     border-radius: 16px;
     padding: 30px 20px;
@@ -55,17 +43,20 @@ header p {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, filter 0.2s ease;
-    cursor: pointer;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Hiệu ứng nảy lên khi di chuột vào */
-.box:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.1);
+/* Hiệu ứng khi lướt chuột qua hộp chưa mở */
+.box.unopened { cursor: pointer; }
+.box.unopened:hover {
+    transform: translateY(-5px) scale(1.02);
+    filter: brightness(1.15);
 }
 
-/* Chi tiết bên trong hộp */
+/* Hiệu ứng mờ đi một chút khi hộp đã được mở */
+.box.opened { cursor: default; filter: brightness(0.9); }
+
+/* Chi tiết văn bản trong hộp */
 .box-num {
     font-size: 0.85rem;
     opacity: 0.9;
@@ -76,39 +67,25 @@ header p {
     border-radius: 20px;
 }
 
-.box-icon {
-    font-size: 4rem;
-    margin-bottom: 15px;
-}
+.box-icon { font-size: 4rem; margin-bottom: 15px; }
+.box-name { font-size: 1.2rem; font-weight: 600; margin: 0 0 5px; }
+.box-status { font-size: 0.9rem; opacity: 0.9; margin: 0; }
 
-.box-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0 0 5px;
-}
-
-.box-status {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin: 0;
-}
-
-/* --- BẢNG MÀU NỀN CHO TỪNG HỘP --- */
-.box.orange { background: linear-gradient(135deg, #ffb142, #ff9f43); }
-.box.purple { background: linear-gradient(135deg, #a55eea, #8854d0); }
-.box.cyan { background: linear-gradient(135deg, #45aaf2, #2d98da); }
-.box.pink { background: linear-gradient(135deg, #ff6b81, #eb3b5a); }
-.box.red { background: linear-gradient(135deg, #ff5252, #b33939); }
-.box.yellow { background: linear-gradient(135deg, #fed330, #f7b731); }
-.box.blue { background: linear-gradient(135deg, #778beb, #546de5); }
-.box.pink-alt { background: linear-gradient(135deg, #fd79a8, #e84393); }
+/* BẢNG 12 MÀU GRADIENT TUYỆT ĐẸP */
+.c1 { background: linear-gradient(135deg, #ffb142, #ff9f43); }
+.c2 { background: linear-gradient(135deg, #a55eea, #8854d0); }
+.c3 { background: linear-gradient(135deg, #45aaf2, #2d98da); }
+.c4 { background: linear-gradient(135deg, #ff6b81, #eb3b5a); }
+.c5 { background: linear-gradient(135deg, #ff5252, #b33939); }
+.c6 { background: linear-gradient(135deg, #fed330, #f7b731); }
+.c7 { background: linear-gradient(135deg, #778beb, #546de5); }
+.c8 { background: linear-gradient(135deg, #fd79a8, #e84393); }
+.c9 { background: linear-gradient(135deg, #2ed573, #1dd1a1); }
+.c10 { background: linear-gradient(135deg, #ff793f, #cd6133); }
+.c11 { background: linear-gradient(135deg, #34ace0, #227093); }
+.c12 { background: linear-gradient(135deg, #706fd3, #474787); }
 
 /* Responsiveness (Cho giao diện điện thoại/tablet) */
-@media (max-width: 900px) {
-    .grid-container { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-    h1 { font-size: 2.2rem; }
-    .grid-container { grid-template-columns: 1fr; }
-}
+@media (max-width: 900px) { .grid-container { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { h1 { font-size: 2.2rem; } .grid-container { grid-template-columns: 1fr; } }
