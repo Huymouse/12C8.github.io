@@ -17,20 +17,20 @@ const gifts = [
 // Danh sách 12 màu nền gradient tương ứng trong CSS
 const colors = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'c12'];
 
-// Xáo trộn ngẫu nhiên danh sách quà (vẫn giữ logic xáo trộn gốc)
+// Hàm logic
 gifts.sort(() => Math.random() - 0.5);
 
 const container = document.getElementById('boxContainer');
 const progressText = document.getElementById('progressText');
 let openedCount = 0;
 
-// Vòng lặp tự động tạo 12 hộp quà
+// Hàm lặp tái tạo
 for (let i = 0; i < 12; i++) {
     const box = document.createElement('div');
-    // Gắn class cơ bản, class trạng thái và màu nền ngẫu nhiên
+    // class basic ở chỗ này này tml
     box.className = `box unopened ${colors[i]}`;
     
-    // Cấu trúc HTML bên trong mỗi hộp khi chưa mở
+    // HTML của hộp
     box.innerHTML = `
         <p class="box-num">Hộp #${i + 1}</p>
         <div class="box-icon">🎁</div>
@@ -38,37 +38,37 @@ for (let i = 0; i < 12; i++) {
         <p class="box-status">Nhấn để mở</p>
     `;
 
-    // Thêm sự kiện click
+    //click
     box.addEventListener('click', function() {
-        // Nếu hộp đã mở rồi thì không làm gì cả
+        
         if (this.classList.contains('opened')) return;
 
-        // 1. Kích hoạt hiệu ứng pháo giấy
+        // 1. Graphic effect 1
         confetti({
             particleCount: 100,
             spread: 70,
             origin: { y: 0.6 }
         });
 
-        // 2. Thay đổi trạng thái hộp
+        // 2. Transform
         this.classList.remove('unopened');
         this.classList.add('opened');
 
-        // 3. Hiển thị phần thưởng (Đã thêm class="gift-img" vào thẻ img)
+        // 3. Class gif
         const gift = gifts[i];
         this.querySelector('.box-icon').innerHTML = `<img src="${gift.image}" alt="${gift.name}" class="gift-img">`;
         
         const nameEl = this.querySelector('.box-name');
         nameEl.innerText = gift.name;
-        nameEl.style.display = 'block'; // Hiện tên quà lên
+        nameEl.style.display = 'block';
         
         this.querySelector('.box-status').innerText = 'Chưa tày rồi!';
 
-        // 4. Cập nhật thanh tiến trình
+        // 4. Hàm progress
         openedCount++;
         progressText.innerText = `Tiến trình: ${openedCount} / 12 hộp đã mất trink`;
     });
 
-    // Bơm hộp quà vào giao diện
+  
     container.appendChild(box);
 }
