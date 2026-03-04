@@ -44,7 +44,7 @@ for (let i = 0; i < 22; i++) {
         <p class="box-num">Hộp #${i + 1}</p>
         <div class="box-icon">🎁</div>
         <h3 class="box-name" style="display: none;"></h3>
-        <p class="box-status">Nhấn vào đây này</p>
+        <p class="box-status">Nhấn để mở</p>
     `;
 
     box.addEventListener('click', function() {
@@ -80,5 +80,5 @@ btnConfirm.addEventListener('click', () => {
     selectedBoxElement.querySelector('.box-status').innerText = 'Chưa tày lắm!';
 
     openedCount++;
-    progressText.innerText = `Tiến trình: ${openedCount} / 22 hộp đã mất trink`;
+    progressText.innerText = `Tiến trình: ${openedCount} / 22 hộp đã mở`;
 });
