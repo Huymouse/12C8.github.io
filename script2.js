@@ -1,10 +1,28 @@
-const gifts = Array(10).fill({ name: "Mạnh Tân", image: "manh-tan.png" });
-const colors = ['c13', 'c14', 'c15', 'c16', 'c17', 'c18', 'c19', 'c20', 'c21', 'c22'];
-gifts.sort(() => Math.random() - 0.5);
+const totalBoxes = 22;
+const colors = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'c12', 'c13', 'c14', 'c15', 'c16', 'c17', 'c18', 'c19', 'c20', 'c21', 'c22'];
+
+let gifts = [];
+let openedBoxes = [];
+
+if (localStorage.getItem('huy_gifts')) {
+    gifts = JSON.parse(localStorage.getItem('huy_gifts'));
+} else {
+    gifts = Array(totalBoxes).fill({ name: "Mạnh Tân", image: "manh-tan.png" });
+    gifts.sort(() => Math.random() - 0.5);
+    localStorage.setItem('huy_gifts', JSON.stringify(gifts));
+}
+
+if (localStorage.getItem('huy_opened')) {
+    openedBoxes = JSON.parse(localStorage.getItem('huy_opened'));
+}
 
 const container = document.getElementById('boxContainer');
 const progressText = document.getElementById('progressText');
-let openedCount = 0;
+
+const updateProgress = () => {
+    progressText.innerText = `Tiến trình: ${openedBoxes.length} / ${totalBoxes} túi đã mất trink`;
+};
+updateProgress();
 
 const popup = document.getElementById('customPopup');
 const btnCancel = document.getElementById('btnCancel');
@@ -12,17 +30,27 @@ const btnConfirm = document.getElementById('btnConfirm');
 let selectedBoxIndex = null;
 let selectedBoxElement = null;
 
-// Vòng lặp 10 hộp (từ 13 đến 22)
-for (let i = 0; i < 10; i++) {
+for (let i = 12; i < 22; i++) {
     const box = document.createElement('div');
     box.className = `box unopened ${colors[i]}`;
     
     box.innerHTML = `
-        <p class="box-num">Túi #${i + 13}</p>
+        <p class="box-num">Túi #${i + 1}</p>
         <div class="box-icon">🎁</div>
         <h3 class="box-name" style="display: none;"></h3>
         <p class="box-status">Nhấn vào đây này</p>
     `;
+
+    if (openedBoxes.includes(i)) {
+        box.classList.remove('unopened');
+        box.classList.add('opened');
+        
+        const gift = gifts[i];
+        box.querySelector('.box-icon').innerHTML = `<img src="${gift.image}" alt="${gift.name}" class="gift-img">`;
+        box.querySelector('.box-name').innerText = gift.name;
+        box.querySelector('.box-name').style.display = 'block'; 
+        box.querySelector('.box-status').innerText = 'Chưa tày lắm!';
+    }
 
     box.addEventListener('click', function() {
         if (this.classList.contains('opened')) return;
@@ -30,6 +58,7 @@ for (let i = 0; i < 10; i++) {
         selectedBoxElement = this;
         popup.classList.remove('hidden');
     });
+
     container.appendChild(box);
 }
 
@@ -50,6 +79,19 @@ btnConfirm.addEventListener('click', () => {
     nameEl.style.display = 'block'; 
     selectedBoxElement.querySelector('.box-status').innerText = 'Chưa tày lắm!';
 
-    openedCount++;
-    progressText.innerText = `Tiến trình: ${openedCount} / 10 túi đã mất trink`;
+    openedBoxes.push(selectedBoxIndex);
+    localStorage.setItem('huy_opened', JSON.stringify(openedBoxes));
+
+    updateProgress();
 });
+
+const btnReset = document.getElementById('btnReset');
+if (btnReset) {
+    btnReset.addEventListener('click', () => {
+        if (confirm('ấn Ok là bay màu hết!')) {
+            localStorage.removeItem('huy_gifts');
+            localStorage.removeItem('huy_opened');
+            location.reload();
+        }
+    });
+}
