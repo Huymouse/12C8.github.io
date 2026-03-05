@@ -122,5 +122,6 @@ if (btnConfirmReset) {
         localStorage.removeItem('huy_gifts');
         localStorage.removeItem('huy_opened');
         location.reload(); 
+        
     });
 }
