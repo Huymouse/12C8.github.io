@@ -8,28 +8,28 @@ if (localStorage.getItem('huy_gifts')) {
     gifts = JSON.parse(localStorage.getItem('huy_gifts'));
 } else {
     gifts = [
-        { name: "Chúc mừng!", image: "giaidocdac.jpg" },
-        { name: "Chúc mừng!", image: "giaidocdac.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhat.jpg" },
-        { name: "Chúc mừng!", image: "giainhi.jpg" },
-        { name: "Chúc mừng!", image: "giainhi.jpg" },
-        { name: "Chúc mừng!", image: "giainhi.jpg" },
-        { name: "Chúc mừng!", image: "giainhi.jpg" },
-        { name: "Chúc mừng!", image: "giainhi.jpg" },
-        { name: "Chúc mừng!", image: "giaiba.jpg" },
-        { name: "Chúc mừng!", image: "giaiba.jpg" },
-        { name: "Chúc mừng!", image: "giaiba.jpg" },
-        { name: "Chúc mừng!", image: "giaikk.jpg" },
-        { name: "Chúc mừng!", image: "giaikk.jpg" },
-        { name: "Chúc mừng!", image: "giaikk.jpg" },
-        { name: "Chúc mừng!", image: "giaikk.jpg" }
+        { name: "Chúc mừng!", image: "giaidocdac.jpg", message: "💖Bạn đã trúng quà độc đắc!!💖" },
+        { name: "Chúc mừng!", image: "giaidocdac.jpg", message: "💖Bạn đã trúng quà độc đắc!!💖" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhat.jpg", message: "Bạn trúng 1 bó hoa do các zai đẹp c8 chuẩn bị❤️" },
+        { name: "Chúc mừng!", image: "giainhi.jpg", message: "Bạn đã trúng 1 balo bim bim do các zai đẹp c8 chuẩn bị❤️‍🔥" },
+        { name: "Chúc mừng!", image: "giainhi.jpg", message: "Bạn đã trúng 1 balo bim bim do các zai đẹp c8 chuẩn bị❤️‍🔥" },
+        { name: "Chúc mừng!", image: "giainhi.jpg", message: "Bạn đã trúng 1 balo bim bim do các zai đẹp c8 chuẩn bị❤️‍🔥" },
+        { name: "Chúc mừng!", image: "giainhi.jpg", message: "Bạn đã trúng 1 balo bim bim do các zai đẹp c8 chuẩn bị❤️‍🔥" },
+        { name: "Chúc mừng!", image: "giainhi.jpg", message: "Bạn đã trúng 1 balo bim bim do các zai đẹp c8 chuẩn bị❤️‍🔥" },
+        { name: "Chúc mừng!", image: "giaiba.jpg", message: "Bạn đã trúng 1 set đồ màu hường do các zai đẹp c8 chuẩn bị🌷" },
+        { name: "Chúc mừng!", image: "giaiba.jpg", message: "Bạn đã trúng 1 set đồ màu hường do các zai đẹp c8 chuẩn bị🌷" },
+        { name: "Chúc mừng!", image: "giaiba.jpg", message: "Bạn đã trúng 1 set đồ màu hường do các zai đẹp c8 chuẩn bị🌷" },
+        { name: "Chúc mừng!", image: "giaikk.jpg", message: "Bạn đã trúng 1 cặp lego do các zai đẹp c8 chuẩn bị🌹" },
+        { name: "Chúc mừng!", image: "giaikk.jpg", message: "Bạn đã trúng 1 cặp lego do các zai đẹp c8 chuẩn bị🌹" },
+        { name: "Chúc mừng!", image: "giaikk.jpg", message: "Bạn đã trúng 1 cặp lego do các zai đẹp c8 chuẩn bị🌹" },
+        { name: "Chúc mừng!", image: "giaikk.jpg", message: "TBạn đã trúng 1 cặp lego do các zai đẹp c8 chuẩn bị🌹" }
     ];
     gifts.sort(() => Math.random() - 0.5);
     localStorage.setItem('huy_gifts', JSON.stringify(gifts));
@@ -72,7 +72,7 @@ for (let i = 0; i < 12; i++) {
         box.querySelector('.box-icon').innerHTML = `<img src="${gift.image}" alt="${gift.name}" class="gift-img">`;
         box.querySelector('.box-name').innerText = gift.name;
         box.querySelector('.box-name').style.display = 'block'; 
-        box.querySelector('.box-status').innerText = 'Chưa tày lắm!';
+        box.querySelector('.box-status').innerText = gift.message;
     }
 
     box.addEventListener('click', function() {
@@ -99,7 +99,7 @@ if(btnConfirm) btnConfirm.addEventListener('click', () => {
     const nameEl = selectedBoxElement.querySelector('.box-name');
     nameEl.innerText = gift.name;
     nameEl.style.display = 'block'; 
-    selectedBoxElement.querySelector('.box-status').innerText = 'Chưa tày lắm!';
+    selectedBoxElement.querySelector('.box-status').innerText = gift.message;
 
     openedBoxes.push(selectedBoxIndex);
     localStorage.setItem('huy_opened', JSON.stringify(openedBoxes));
