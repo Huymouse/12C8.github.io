@@ -249,3 +249,28 @@ header p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px; }
         font-size: 0.85rem;
     }
 }
+
+#resetPopup .popup-content {
+    background: linear-gradient(135deg, #3a0000, #1a0000);
+    border: 2px solid rgba(255, 82, 82, 0.6);
+    box-shadow: 0 10px 40px rgba(255, 0, 0, 0.5);
+}
+
+#resetPopup h3 {
+    color: #ff5252;
+    font-size: 1.8rem;
+}
+
+#resetPopup p {
+    color: #ffcccc;
+}
+
+#btnConfirmReset {
+    background: linear-gradient(135deg, #ff3333, #b30000);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+
+#btnConfirmReset:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
