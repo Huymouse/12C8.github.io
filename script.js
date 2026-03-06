@@ -43,7 +43,7 @@ const container = document.getElementById('boxContainer');
 const progressText = document.getElementById('progressText');
 
 const updateProgress = () => {
-    if(progressText) progressText.innerText = `Tiến trình: ${openedBoxes.length} / ${totalBoxes} túi đã mất trink`;
+    if(progressText) progressText.innerText = `Tiến trình: ${openedBoxes.length} / ${totalBoxes} túi đã bị bóc tem`;
 };
 updateProgress();
 
