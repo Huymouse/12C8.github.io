@@ -297,5 +297,5 @@ header p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px; }
     animation: jackpotGlow 1s ease-in-out infinite alternate !important;
     transform: scale(1.05);
     z-index: 10;
-    background: rgba(9, 255, 0, 0.05) !important;
+    background: rgba(255, 215, 0, 0.05) !important;
 }
