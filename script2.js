@@ -93,7 +93,7 @@ if(btnConfirm) btnConfirm.addEventListener('click', () => {
 
     selectedBoxElement.classList.remove('unopened');
     selectedBoxElement.classList.add('opened');
-
+// khi mở túi*//
     const gift = gifts[selectedBoxIndex];
     if (gift.image === "giaidocdac.jpg") 
     {
